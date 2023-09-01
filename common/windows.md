@@ -2,7 +2,7 @@
 Подойдёт как Windows 10, так и Windows 11.
 
 Вам в любом случае потребуется поставить и настроить себе Ubuntu в виртуальной машине или WSL (по умолчанию используется версия 2, это ок).
-В случае WSL вы можете либо работать целиком в консоли, либо [настроить виндовый CLion для работы с WSL 2](https://www.jetbrains.com/help/clion/how-to-use-wsl-development-environment-in-product.html).
+В случае WSL вы можете либо работать целиком в консоли, либо настроить среду разработки, чтобы она запускала всё в WSL.
 
 Но вы также можете установить себе компиляторы, работающие целиком под Windows.
 Принципиально вы можете себе поставить либо экосистему Microsoft Visual Studio (компиляторы Visual C++ и Clang), либо экосистему msys2 (компиляторы GCC и Clang, плюс куча инструментов как под Linux).
@@ -24,7 +24,7 @@
         * При желании добавьте "C++ profiling tools" ("Средства профилирования C++"), может помочь при поиске тормозов в программе
         * При желании добавьте "IntelliCode", это какие-то экспериментальные подсказки при наборе кода
     * На вкладке "Language packs" ("Языковые пакеты") добавьте английский язык, а вот русский лучше удалить.
-3. Поставьте компилятор Clang и инструменты из проекта LLVM [отсюда](https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/LLVM-14.0.6-win64.exe).
+3. Поставьте компилятор Clang и инструменты из проекта LLVM [отсюда](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.7/LLVM-15.0.7-win64.exe).
    Обратите внимание, что эта сборка использует стандартную библиотеку Visual C++ и не будет работать без установленной Visual Studio.
    Но запускать этот Clang умеют и Visual Studio, и в CLion.
 
@@ -53,32 +53,15 @@
 
 ## Установка Ubuntu
 Требуется Windows 10 или Windows 11.
-Проверьте, что у вас в настройках компьютера ("в биосе") включена "аппаратная виртуализация" (Virtualization, Intel-VT, AMD-V).
-На всех компьютерах это делается немного по-разному, но обычно надо перезагрузиться, при загрузке нажимать Del/Esc/Enter,
-зайти в биос, там найти настройку с таким названием и поставить из "Off"/"Disabled" в "On"/"Enabled", сохранить.
 
-Дальше идёт пересказ [инструкции по ручной установке WSL](https://docs.microsoft.com/ru-ru/windows/wsl/install-manual).
-Автоматическая через команду `wsl --install` **не подходит**, она [пока не умеет устанавливать Ubuntu 22.04](https://github.com/microsoft/WSL/issues/8402).
-
-Экспериментальная альтернатива – установить всё [через Docker](https://github.com/hse-spb-2022-cpp/hse-cpp-docker), но он
-тоже может затребовать включённый WSL.
+Дальше идёт пересказ [инструкции по автоматической установке WSL](https://learn.microsoft.com/ru-ru/windows/wsl/install).
+Экспериментальная альтернатива — установка всего через Docker — тоже может потребовать включённый WSL.
 
 Выполните следующие команды в консоли от имени администратора:
 
 ```bash
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+wsl --install -d Ubuntu-22.04
 ```
-
-Затем установите [вот это](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi), перезагрузите компьютер и введите команду:
-
-```bash
-wsl --set-default-version 2
-```
-
-После этого [установите Ubuntu 22.04.1 из Microsoft Store](https://www.microsoft.com/p/ubuntu/9PN20MSR04DW) и запустите.
-Если установка виснет – посмотрите, нет ли сообщений об ошибках в нижней части установщика, нажмите на стрелочку с подробностями.
-Там могут быть ссылки с подсказками.
 
 Убедитесь, что у вас спросили имя пользователя и пароль при настройке Ubuntu.
 Не используйте кириллицу (да и вообще не-латинские символы) и пробелы в именах или описаниях пользователей.
@@ -91,16 +74,19 @@ wsl --set-default-version 2
 1. Cppcheck 2.7 ставится [по ссылкам с официального сайта](https://github.com/danmar/cppcheck/releases/download/2.7/cppcheck-2.7-x64-Setup.msi).
 2. Консольный клиент git ставится [с официального сайта](https://git-scm.com/download/win), в комплекте также включён git bash (он подойдёт).
    В качестве редактора рекомендуется оставить блокнот или Nano. Не выбирайте Vim, если не знаете, что это.
-3. Интерпретатор языка Python (для запуска некоторых автоматических тестов).
+3. Интерпретатор языка Python (для запуска некоторых автоматических тестов) ставится [с официального сайта](https://www.python.org/downloads/).
 4. Система сборки CMake ставится [с официального сайта](https://cmake.org/download).
    Для Visual Studio система make не нужна, а для msys2 она уже была поставлена по инструкции выше (надо выбирать правильный генератор ключом `-G "MSYS Makefiles"`).
 
 ### Дополнительно: установка Intel C++ Compiler Classic
-TODO: ставится как часть [Intel openAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html)
+Ставится как часть [Intel openAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html?operatingsystem=window&distributions=offline&version=2023.2.0).
+Email не нужен, там есть ссылка "Continue without signing up (download starts immediately)" прямо под кнопкой.
 Если не грузится - это санкции, попробуйте через VPN.
 
 ### Дополнительно: установка Boost
-TODO
+Если вы установили Visual Studio, проще всего установить [предкомпилированный Boost](https://sourceforge.net/projects/boost/files/boost-binaries/1.74.0/boost_1_74_0-msvc-14.2-64.exe/download).
+
+Если у вас стоит msys2, то запустите `pacman -S mingw-w64-x86_64-boost`.
 
 ### Дополнительно: установка Netcat
 Если у вас стоит msys2, то запустите `pacman -S openbsd-netcat` (есть ещё версия gnu, она не такая модная).

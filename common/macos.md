@@ -1,5 +1,5 @@
 # macOS
-Будьте осторожны: обычно на macOS используется Apple Clang (не LLVM Clang), который скрывается за командой `gcc` и ставится вместе с Apple-специфичной средой разработки Xcode
+Будьте осторожны: обычно на macOS используется Apple Clang (не LLVM Clang), который скрывается за командой `gcc`/`g++` и ставится вместе с Apple-специфичной средой разработки Xcode
 или её консольной версией.
 Скорее всего, будет не та версия, что надо. Проверьте, запустив `g++ --version`.
 
@@ -11,13 +11,13 @@
    xcode-select --install
    ```
 2. В качестве виртуальной машины, если у вас процессор Intel, проще всего поставить [Oracle VirtualBox](https://www.virtualbox.org/) и скачать в него [готовый образ с Ubuntu 22.04 от проекта OSboxes](https://www.osboxes.org/ubuntu/). Дальше следуйте шагам по настройке Ubuntu.
-   Для процессора M1 Ubuntu можно поставить через [виртуальную машину UTM](https://mac.getutm.app/gallery/ubuntu-20-04), только используйте [Ubuntu 22.04](https://mirror.yandex.ru/ubuntu-cdimage/releases/22.04.1/release/ubuntu-22.04.1-live-server-arm64.iso) вместо Ubuntu 20.04.
-   Экспериментальная альтернатива – установить всё [через Docker](https://github.com/hse-spb-2022-cpp/hse-cpp-docker).
+   Для процессора M1 Ubuntu можно поставить через [виртуальную машину UTM](https://mac.getutm.app/gallery/ubuntu-20-04), только используйте [Ubuntu 22.04](https://mirror.yandex.ru/ubuntu-cdimage/releases/22.04.3/release/ubuntu-22.04.3-live-server-arm64.iso) вместо Ubuntu 20.04.
+   Экспериментальная альтернатива – установить всё через Docker (TODO).
 3. Установите пакетный менеджер [Homebrew](https://brew.sh/): запустите команду с домашней страницы и внимательно прочитайте, когда оно скажет Run these two commands in your terminal, эти команды необходимо выполнить. 
 4. Выполните команды:
    ```bash
    brew update  # Обновление списка доступных пакетов
-   brew install llvm@14 cppcheck git cmake make  # Установка инструментов LLVM, cppcheck не той версии, git, cmake, make
+   brew install llvm@15 cppcheck git cmake make  # Установка инструментов LLVM, cppcheck не той версии, git, cmake, make
    ```
    Интерпретаторы bash и Python уже стоят.
 5. Теперь у вас должны появиться команды `cmake` и `cppcheck`.
