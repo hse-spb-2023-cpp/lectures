@@ -1,4 +1,5 @@
 C++ 201703
 64-bit
-Detecting compiler... GNU C 12.0.1
-Detecting standard library... GNU libstdc++: 20220319
+sizeof(void*): 8
+Detecting compiler... GNU C 12.3.0
+Detecting standard library... GNU libstdc++: 20230510

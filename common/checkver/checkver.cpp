@@ -10,6 +10,8 @@ int main() {
     std::cout << "32-bit\n";
 #endif
 
+    std::cout << "sizeof(void*): " << sizeof(void*) << "\n";
+
     std::cout << "Detecting compiler... ";
 #if defined(__clang__)
     std::cout << "LLVM/Apple clang " << __clang_version__ << "\n";

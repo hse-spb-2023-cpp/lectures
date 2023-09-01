@@ -29,7 +29,8 @@
    Но запускать этот Clang умеют и Visual Studio, и в CLion.
 
 С компилятором Visual Studio проще работать из Visual Studio, но можно и настроить для этого CLion.
-При большом желании можно запускать компилятор руками из командной строки: откройте "x64 Native Tools Command Prompt for VS 2022" из меню "Пуск", компилятор станет называться `cl`.
+При большом желании можно запускать компилятор руками из командной строки: откройте `x64 Native Tools Command Prompt for VS 2022` из меню "Пуск", компилятор станет называться `cl`.
+32-битная версия запускается из `x86 Native Tools Command Prompt for VS 2022`.
 
 ### Вариант 2: установка экосистемы msys2
 Есть много разных сборок GCC, я рекомендую ставить из проекта msys2. Так вы бесплатно получите кучу библиотек для C++ и полезных инструментов из Linux.
@@ -84,7 +85,8 @@ Email не нужен, там есть ссылка "Continue without signing up
 Если не грузится - это санкции, попробуйте через VPN.
 
 ### Дополнительно: установка Boost
-Если вы установили Visual Studio, проще всего установить [предкомпилированный Boost](https://sourceforge.net/projects/boost/files/boost-binaries/1.74.0/boost_1_74_0-msvc-14.2-64.exe/download).
+Если вы установили Visual Studio, проще всего установить предкомпилированный Boost: [64-битная версия](https://sourceforge.net/projects/boost/files/boost-binaries/1.74.0/boost_1_74_0-msvc-14.2-64.exe/download),
+[32-битная версия](https://sourceforge.net/projects/boost/files/boost-binaries/1.74.0/boost_1_74_0-msvc-14.2-32.exe/download).
 
 Если у вас стоит msys2, то запустите `pacman -S mingw-w64-x86_64-boost`.
 
