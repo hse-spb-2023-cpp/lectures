@@ -1,7 +1,9 @@
 # С чего начать
 Всё по этим ссылкам знать обязательно:
 
-* Переход с Python на C++ для алгоритмических задач и олимпиад: https://notes.algoprog.ru/cpp/index.html
+* Базовый синтаксис C++ — одно из двух:
+    * Переход с Python на C++ для алгоритмических задач и олимпиад: https://notes.algoprog.ru/cpp/index.html
+    * Все прорешанные задачи из курса: https://stepik.org/course/363/promo
 * Работа с консолью:
     * [Краткая вводная лекция](https://www.youtube.com/watch?v=G7Dgxtgj2Tw&list=PLxMpIvWUjaJuOVEWZ0-H7QaUeREmyqNl9&index=2)
     * [Курс по работе в Linux](https://stepik.org/course/73/promo) (обязательно знать от раздела 1.4 "Terminal: основы" до раздела 1.6 "Ввод / вывод" включительно)
