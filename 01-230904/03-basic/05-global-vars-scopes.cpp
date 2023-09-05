@@ -11,11 +11,11 @@ int main() {
         // int a = 100;  // cannot make another variable in the same scope
         {
             int a = 6;  // "shadows" the local variable
-            int x = 100;
-            std::cout << a << " " << x << "\n";  // 6 100
+            int aa = 100;
+            std::cout << a << " " << aa << "\n";  // 6 100
         }
         std::cout << a << "\n";  // 5
-        // std::cout << x << "\n";  // compilation error
+        // std::cout << aa << "\n";  // compilation error
     }
     std::cout << a << "\n";  // 10
 }
