@@ -89,6 +89,12 @@ wsl --install -d Ubuntu-22.04
 После установки запустите WSL и настройте как будто это обычная Ubuntu, разве что без виртуальной машины с Windows (у вас уже есть обычная).
 Обязательно проверьте версию.
 
+Также будет полезно поставить команды `dos2unix`/`unix2dos` (идут вместе), выполнив:
+
+```bash
+sudo apt install dos2unix
+```
+
 ## Прочие инструменты
 1. Cppcheck 2.7 ставится [по ссылкам с официального сайта](https://github.com/danmar/cppcheck/releases/download/2.7/cppcheck-2.7-x64-Setup.msi).
 2. Консольный клиент git ставится [с официального сайта](https://git-scm.com/download/win), в комплекте также включён git bash (он подойдёт).
