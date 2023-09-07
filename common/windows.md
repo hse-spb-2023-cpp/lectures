@@ -17,16 +17,17 @@
 1. Скачайте и запустите установщик [с официального сайта](https://visualstudio.microsoft.com/ru/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false).
 2. При установке выберите:
     * Workload ("Рабочая нагрузка") "Desktop development with C++" ("Разработка классических приложений на C++").
-    * Внутри этой Workload оставьте только компоненты:
-        * "MSVC v143 ... x86/64 build tools" ("MSVC версии 142 ... x86/64 Build Tools (последняя версия)")
-        * "Windows 10 SDK" ("Пакет SDK для Windows 10 ") или "Windows 11 SDK" ("Пакет SDK для Windows 11") в зависимости от вашей версии Windows
-        * "C++ Address Sanitizer"
+    * Внутри этой Workload оставьте только "Отдельные компоненты":
+        * "MSVC v143 ... x64/x86 build tools" ("MSVC версии 143 ... x64/x86 Build Tools (последняя версия)")
+        * "Windows 10 SDK" ("Пакет SDK для Windows 10") или "Windows 11 SDK" ("Пакет SDK для Windows 11") в зависимости от вашей версии Windows
+        * "C++ AddressSanitizer" (не переводится)
         * При желании добавьте "C++ profiling tools" ("Средства профилирования C++"), может помочь при поиске тормозов в программе
-        * При желании добавьте "IntelliCode", это какие-то экспериментальные подсказки при наборе кода
+        * При желании добавьте "IntelliCode" (не переводится), это какие-то экспериментальные подсказки при наборе кода
     * На вкладке "Language packs" ("Языковые пакеты") добавьте английский язык, а вот русский лучше удалить.
-3. Поставьте компилятор Clang и инструменты из проекта LLVM [отсюда](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.7/LLVM-15.0.7-win64.exe).
+3. Поставьте компилятор Clang и инструменты из проекта LLVM (вроде `clang-format`) [отсюда](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.7/LLVM-15.0.7-win64.exe).
    Обратите внимание, что эта сборка использует стандартную библиотеку Visual C++ и не будет работать без установленной Visual Studio.
    Но запускать этот Clang умеют и Visual Studio, и в CLion.
+   При установке выберите `Add LLVM to the system PATH for all users`.
 
 С компилятором Visual Studio проще работать из Visual Studio, но можно и настроить для этого CLion.
 При большом желании можно запускать компилятор руками из командной строки: откройте `x64 Native Tools Command Prompt for VS 2022` из меню "Пуск", компилятор станет называться `cl`.
