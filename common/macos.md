@@ -42,7 +42,19 @@
 Не libstdc++, как на Linux, и даже не совсем LLVM libc++.
 Из-за этого и говорят, что "на маках компилируется, а под другими ОС нет", виновата другая стандартная библиотека.
 
+
+## Актуальные версии инструментов
+```bash
+clang++ --version # Apple clang version 14.0.3 (clang-1403.0.22.14.1)
+cmake --version # cmake version 3.27.4
+make --version # GNU Make 3.81
+clang-tidy --version # Homebrew LLVM version 15.0.7
+clang-format --version # Homebrew clang-format version 15.0.7
+cppcheck --version # Cppcheck 2.11.1
+```
+
 ## Возможные проблемы
 * [Ошибка при установке Homebrew: `"Failed during: git fetch origin master:refs/remotes/origin/master -n --depth=1"`](https://stackoverflow.com/questions/39836190/homebrew-install-failed-during-git-fetch-origin-masterrefs-remotes-origin-mas)
     * Может помочь команда `git config --global user.email <здесь-ваш-email-с-GitHub>`, вроде `git config --global user.email noreply@example.com`.
       На самом деле можно написать любой email (даже несуществующий), но тогда на GitHub могут быть трудности, если забудете поменять.
+ 
