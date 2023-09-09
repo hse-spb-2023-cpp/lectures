@@ -17,7 +17,7 @@
 4. Выполните команды:
    ```bash
    brew update  # Обновление списка доступных пакетов
-   brew install llvm@15 cppcheck git cmake make  # Установка инструментов LLVM, cppcheck не той версии, git, cmake, make
+   brew install llvm@15 cppcheck git cmake make coreutils # Установка инструментов LLVM, cppcheck не той версии, git, cmake, make, вспомогательной команды timeout
    ```
    Интерпретаторы bash и Python уже стоят.
 5. Теперь у вас должны появиться команды `cmake` и `cppcheck`.

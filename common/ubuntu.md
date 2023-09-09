@@ -10,7 +10,7 @@
     # Среды разработки ставятся по-разному, тут инструкции нет.
     sudo apt install clang-format-15 clang-tidy-15  # Инструменты от LLVM
     sudo apt install cppcheck  # Cppcheck
-    sudo apt install git  # Консольный клиент для git; bash уже стоит
+    sudo apt install git  # Консольный клиент для git; bash и timeout уже стоят
     # Python уже стоит (команда python3)
     sudo apt install cmake make  # CMake и Make
     ```

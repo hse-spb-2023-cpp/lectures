@@ -98,7 +98,7 @@ sudo apt install dos2unix
 
 ## Прочие инструменты
 1. Cppcheck 2.7 ставится [по ссылкам с официального сайта](https://github.com/danmar/cppcheck/releases/download/2.7/cppcheck-2.7-x64-Setup.msi).
-2. Консольный клиент git ставится [с официального сайта](https://git-scm.com/download/win), в комплекте также включён git bash (он подойдёт).
+2. Консольный клиент git ставится [с официального сайта](https://git-scm.com/download/win), в комплекте также включён git bash (он подойдёт) и timeout.
    В качестве редактора рекомендуется оставить блокнот или Nano. Не выбирайте Vim, если не знаете, что это.
 3. Интерпретатор языка Python (для запуска некоторых автоматических тестов) ставится [с официального сайта](https://www.python.org/downloads/).
 4. Система сборки CMake ставится [с официального сайта](https://cmake.org/download).
