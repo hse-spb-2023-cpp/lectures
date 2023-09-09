@@ -46,11 +46,12 @@
 ## Актуальные версии инструментов
 ```bash
 clang++ --version # Apple clang version 14.0.3 (clang-1403.0.22.14.1)
+timeout --version # timeout (GNU coreutils) 9.4
+clang-format --version # Homebrew clang-format version 15.0.7
+clang-tidy --version # Homebrew LLVM version 15.0.7
+cppcheck --version # Cppcheck 2.11.1
 cmake --version # cmake version 3.27.4
 make --version # GNU Make 3.81
-clang-tidy --version # Homebrew LLVM version 15.0.7
-clang-format --version # Homebrew clang-format version 15.0.7
-cppcheck --version # Cppcheck 2.11.1
 ```
 
 ## Возможные проблемы
