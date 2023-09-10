@@ -40,5 +40,19 @@
 
 В частности, вам нужно корректно настроить вашу среду разработки и консольный CMake (при помощи параметра вроде `-DCMAKE_CXX_COMPILER=g++-12`).
 
+## Актуальные версии инструментов
+```bash
+g++-12 --version  # g++-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0
+clang++-15 --version  # Ubuntu clang version 15.0.7
+valgrind --version  # valgrind-3.18.1
+clang-format-15 --version  # Ubuntu clang-format version 15.0.7
+clang-tidy-15 --version  # Ubuntu LLVM version 15.0.7
+cppcheck --version  # Cppcheck 2.7
+git --version  # git version 2.34.1
+cmake --version  # cmake version 3.22.1
+make --version  # GNU Make 4.3
+nc -h  # OpenBSD netcat (Debian patchlevel 1.218-4ubuntu1)
+```
+
 # Другие дистрибутивы Linux
 Вы можете либо поставить виртуальную машину с Ubuntu, либо сделать Docker-контейнер (TODO) на основе образа Ubuntu 22.04.
