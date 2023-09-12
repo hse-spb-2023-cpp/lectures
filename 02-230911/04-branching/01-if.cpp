@@ -8,6 +8,10 @@ int main() {
     if (n < 10)
         std::cout << "less than 10\n";
 
+    // Выпендрёж
+    if (n)
+        std::cout << "not zero\n";
+
     // Not so short
     if (n < 10)
         std::cout << "less than 10\n";
