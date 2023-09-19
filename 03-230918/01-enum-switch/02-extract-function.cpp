@@ -2,19 +2,13 @@
 #include <iostream>
 #include <string>
 
-enum class Operation {
-    Addition,
-    Subtraction,
-    Negation,
-};
-
-Operation get_operation(std::string operation) {
+int get_operation(std::string operation) {
     if (operation == "add") {
-        return Operation::Addition;
+        return 1;
     } else if (operation == "sub") {
-        return Operation::Subtraction;
+        return 2;
     } else if (operation == "neg") {
-        return Operation::Negation;
+        return 3;
     } else {
         assert(false);
     }
@@ -23,16 +17,16 @@ Operation get_operation(std::string operation) {
 int main() {
     std::string operation_str;  // add/sub/neg
     std::cin >> operation_str;
-    Operation operation_id = get_operation(operation_str);
-    if (operation_id == Operation::Addition) {
+    int operation_id = get_operation(operation_str);
+    if (operation_id == 1) {
         int a, b;
         std::cin >> a >> b;
         std::cout << a + b << "\n";
-    } else if (operation_id == Operation::Subtraction) {
+    } else if (operation_id == 2) {
         int a, b;
         std::cin >> a >> b;
         std::cout << a - b << "\n";
-    } else if (operation_id == Operation::Negation) {
+    } else if (operation_id == 3) {
         int a;
         std::cin >> a;
         std::cout << -a << "\n";

@@ -3,11 +3,13 @@
 #include <vector>
 
 int main() {
+    [[maybe_unused]] int x;  // uninitialized! reading - UB.
+
     std::vector<int> v1, v2;  // empty dynamic arrays
     int n = 5;
     n += 5;
     std::vector<int> v3(n);        // 10 zeros
-    std::vector<int> v4{1, 20, 3};  // 3 elements: 1, 20, 3
+    std::vector<int> v4{1, 20, 3}; // 3 elements: 1, 20, 3
     std::vector<int> v5(n, 239);   // 10 of 239
 
     std::cout << "v1:";

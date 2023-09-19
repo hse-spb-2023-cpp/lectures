@@ -12,7 +12,8 @@ int main() {
     // compilation error: legacy, string literal is not really a string
     // `auto` here is not `std::string`, legacy
     [[maybe_unused]] auto a_no_auto = "hello";
-//    a_no_auto += "world";
+    std::cout << a_no_auto << "\n";
+    //a_no_auto += "world";
 
     // https://en.cppreference.com/w/cpp/language/string_literal
     // std::string a_bad = "hello" + "world";

@@ -3,9 +3,9 @@
 #include <utility>
 
 int main() {
-    std::vector<std::pair<int, int>> v;
+    std::vector<std::pair<int, std::string>> v;
 
-    v.emplace_back(20, 30);
+    v.emplace_back(20, "x30");
     std::cout << "v:";
     for (auto [a, b] : v) {  // structured binding, C++17
         // for (a, b) in v:  # Python
@@ -13,7 +13,6 @@ int main() {
     }
     std::cout << "\n";
 
-    // todo: distinct types are ok
     {
         auto [a, b] = v[0];
         std::cout << "v[0] = " << a << " " << b << "\n";

@@ -4,7 +4,10 @@ int main() {
     std::cout << "char: " << sizeof(char)
               << "\n";  // Typically 1 byte, but is treated as "character" for
                         // I/O purposes. Still does arithmetics.
-    [[maybe_unused]] int wtf = '0';
+
+    int wtf = '0';
+    std::cout << wtf << "\n";
+
     char c = '0';  // Typically 48 (ASCII table; please do not use non-ASCII),
                    // note single quotes.
                    // https://en.cppreference.com/w/cpp/language/character_literal

@@ -3,7 +3,7 @@
 #include <vector>
 
 // For contests only!
-using vi = std::vector<int>;
+using vi = std::vector<int>;  // C++11
 
 typedef std::vector<std::vector<int>> vvi;
 

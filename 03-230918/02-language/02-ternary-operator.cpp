@@ -19,6 +19,6 @@ int main() {
 
     // Not really OK
     int a = 10;
-    x == 4 ? a++ : a--;
-    std::cout << a << "\n";  // 1
+    int b = x == 4 ? a++ : --a;
+    std::cout << a << " " << b << "\n";  // 1
 }

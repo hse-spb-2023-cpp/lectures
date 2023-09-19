@@ -13,6 +13,9 @@ int main() {
     // `auto` works with other types as well, but it is always deduced from the
     // initialization.
 
+    auto z = 1;  // int
+    z = z * 1.5;  // `z * 1.5` - double
+
     // Does not work:
     auto tmp; tmp = 12;
 }

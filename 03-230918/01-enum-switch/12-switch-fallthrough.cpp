@@ -25,18 +25,5 @@ int main() {
         }
     }
 
-/*    std::string s;
-    switch (s) {  // Compilation Error :( Integers only.
-    }*/
-
-    enum class Operations { A, B };
-    Operations op = Operations::A;
-    switch (op) {
-        case Operations::A:
-            break;
-//        case Operations::B:
-//            break;
-    }
-
     // I've never seen in the wild, but it's fun: https://en.wikipedia.org/wiki/Duff%27s_device
 }

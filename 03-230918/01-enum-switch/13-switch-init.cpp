@@ -16,8 +16,9 @@ int main() {
                 std::cout << "  2\n";
             } break;
             default: /* { */
-                [[maybe_unused]] int wtf1 = 0;  // Compilation Error in C++
+                int wtf1 = 0;  // Compilation Error in C++
                 std::string s;
+                wtf1++;  // 1
                 std::cout << "  default\n";
                 /* } */ break;
             case 3:

@@ -6,6 +6,7 @@ int main() {
 
     for (auto x : v) {
         x += 10;  // modifies a copy
+        std::cout << "x=" << x << "\n";
     }
     std::cout << "v:";
     for (auto x : v) {
