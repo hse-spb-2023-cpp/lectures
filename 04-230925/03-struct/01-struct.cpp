@@ -1,7 +1,7 @@
 #include <iostream>
 
 struct Point {
-    // members
+    // member fields(TODO?)
     int x, y;  // default initialization (e.g. nothing for `int`, empty `vector`)
 
     // member function

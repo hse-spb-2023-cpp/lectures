@@ -19,6 +19,8 @@ int main() {
 
     readInt();  // skip the number. Kind of useless, [[nodiscard]] is a matter of taste
     std::ignore = readInt();  // explicit ignore, non-standard use of std::ignore
+    static_cast<void>(readInt());
+    (void) readInt();
 
     sum(readInt(), readInt());  // totally useless, just readInt(), readInt()
 }

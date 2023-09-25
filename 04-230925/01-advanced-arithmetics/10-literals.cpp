@@ -21,4 +21,10 @@ int main() {
 
     a = 0b1101;                                  // binary (C++14)
     std::cout << a << " " << 8 + 4 + 1 << "\n";  // 13
+
+    [[maybe_unused]] auto a_int = 10;  // int
+    [[maybe_unused]] auto a_unsigned = 10U;  // unsigned int
+    [[maybe_unused]] auto a_long = 10L;  // long
+    [[maybe_unused]] auto a_longlong = 10LL;  // long long
+    [[maybe_unused]] auto a_unsignedlonglong = 10ULL;  // unsigned long long
 }

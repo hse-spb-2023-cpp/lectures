@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    char c1 = -10;  // can be either signed or signed, typically signed
+    char c1 = -10;  // can be either signed or unsigned, typically signed
     unsigned char c2 = c1;  // always unsigned
     signed char c3 = c1;  // always signed
     std::cout << static_cast<int>(c1) << '\n';

@@ -3,7 +3,7 @@
 struct Point {
     int x, y;
 
-    int dist2() const {  // Add `const` everywhere when possible
+    int dist2() const {  // Add `const` everywhere when possible: const-qualification
         // x++;
         return x * x + y * y;
     }

@@ -25,4 +25,6 @@ int main() {
     } else {
         std::cout << "Always non-negative number is not greater than -1??\n";
     }
+
+    // https://en.cppreference.com/w/cpp/language/types
 }
