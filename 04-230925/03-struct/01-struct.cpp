@@ -1,11 +1,11 @@
 #include <iostream>
 
 struct Point {
-    // member fields(TODO?)
+    // non-static data members (jargon: fields, поля)
     int x, y;  // default initialization (e.g. nothing for `int`, empty `vector`)
 
-    // member function
-    int dist2() {
+    // member function (jargon: methods, методы)
+    int dist2() {  // no `self` like in Python
         return x * x + y * y;
     }
 

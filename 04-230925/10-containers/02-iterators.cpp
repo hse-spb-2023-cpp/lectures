@@ -12,7 +12,7 @@ int main() {
     //   ^    ^   ^   ^   ^    ^
     // begin                  end
     for (; it != ms.end(); ++it) {  // ++it faster than it++
-        std::cout << " " << *it;
+        std::cout << " " << *it;  // dereference (разыменование)
     }
     std::cout << "\n";
     // All operations with iterators are O(1) amortized.
@@ -22,6 +22,7 @@ int main() {
     ms.erase(ms.find(2));
     std::cout << ms.size() << "\n";
 
+    ms.erase(2);  // ok, no-op
     // Элемента не существует: find() == end()
     // erase(end()) - UB
     ms.erase(ms.find(2));  // UB

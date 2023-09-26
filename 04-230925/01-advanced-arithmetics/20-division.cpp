@@ -1,6 +1,8 @@
 #include <iostream>
 
 int main() {
+    std::cout << 7.0 / 3 << "\n";  // 2.3333333, double / int is double
+
     std::cout << 7 / 3 << " " << 7 % 3 << "\n";  // 2 1, int / int is int
     // Invariant: (a / b) * b + (a % b) == a
 

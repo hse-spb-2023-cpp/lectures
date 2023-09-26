@@ -13,6 +13,7 @@ int main() {
     a = 0x2F;  // hexadecimal: 0x or 0X
     a = 0x2f;
     std::cout << a << " " << 2 * 16 + 1 * 15 << "\n";  // 47
+    a = 47;  // same
 
     a = 0xDEADBEEF;
 
@@ -21,6 +22,8 @@ int main() {
 
     a = 0b1101;                                  // binary (C++14)
     std::cout << a << " " << 8 + 4 + 1 << "\n";  // 13
+
+    // `std::cin` and `std::stoi` - always decimal, unless configured otherwise
 
     [[maybe_unused]] auto a_int = 10;  // int
     [[maybe_unused]] auto a_unsigned = 10U;  // unsigned int

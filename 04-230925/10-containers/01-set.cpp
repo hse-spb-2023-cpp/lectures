@@ -17,8 +17,9 @@ int main() {
 
         std::cout << s.count(3) << "\n";
         std::cout << s.count(33) << "\n";
-        if (s.count(10)) { /* ... */ }
+        if (s.count(10) > 0) { /* ... */ }
         if (s.count(10) != 0) { /* ... */ }
+        if (s.count(10)) { /* ... */ }
     }
 
     {

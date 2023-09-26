@@ -15,4 +15,5 @@ int main() {
 
     // https://en.cppreference.com/w/cpp/string/byte/isspace
     std::cout << std::isspace(c1) << '\n';  // oops, UB: expects `unsigned char` or `int`
+    std::cout << std::isspace(static_cast<unsigned char>(c1)) << '\n';
 }

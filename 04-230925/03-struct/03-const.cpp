@@ -3,7 +3,7 @@
 struct Point {
     int x, y;
 
-    int dist2() const {  // Add `const` everywhere when possible: const-qualification
+    int dist2() const {  // Add `const` everywhere when possible: const-qualification (clang-tidy warns)
         // x++;
         return x * x + y * y;
     }
