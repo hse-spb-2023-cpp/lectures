@@ -13,7 +13,7 @@ public:
     }
 
     bigint &operator+=(const bigint &other) {
-        return *this = *this + other;
+        return *this = *this + other;  // always creates a copy, even if unnecessary
     }
 
     bigint operator+(const bigint &other) const {
@@ -28,7 +28,7 @@ bigint &operator-=(bigint &lhs, const bigint &rhs) {
 }
 
 bigint operator-(bigint lhs, const bigint &rhs) {
-    return lhs -= rhs;  // lhs is a copy already
+    return lhs -= rhs;  // lhs is a copy already; moreover, it's sometimes a temporary object (no copies)
 }
 
 int main() {

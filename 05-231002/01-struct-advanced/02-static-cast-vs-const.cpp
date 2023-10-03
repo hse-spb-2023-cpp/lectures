@@ -30,6 +30,7 @@ int main() {
     p.x = 10;
     p.y = 20;
     foo(p);  // OK
+    std::cout << "in main: " << p.x << " " << p.y << "\n";
 
     const Point const_p{30, 40};
     foo(const_p);  // UB when calling dist2()

@@ -4,13 +4,13 @@ struct ratio {
     int num;
     int denom;
     std::vector<int> unused_vector;
-    ratio() {  // default constructor
+    ratio() {  // default constructor (default initialization/value initialization)
         num = 0;
         denom = 1;
         unused_vector.resize(1);
         std::cout << "Default constructor\n";
     }
-    ratio(int value) {  // non-default constructor
+    ratio(int value) {  // non-default constructor (direct/list initialization)
         num = value;
         denom = 1;
         unused_vector.resize(2);
@@ -24,7 +24,7 @@ int main() {
         std::cout << r.num << "\n";
         std::cout << r.denom << "\n";
 
-        ratio r2{};  // value initialization/list initialization
+        ratio r2{};  // value initialization
         std::cout << r2.num << "\n";
         std::cout << r2.denom << "\n";
 

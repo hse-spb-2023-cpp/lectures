@@ -15,7 +15,6 @@ public:
     bigint &operator+=(const bigint &other) {
         digits[0] += other.digits[0];
         return *this;  // should return reference to 'this' object,
-                       // `*this` is magic at the moment.
     }
 
     operator int() const {

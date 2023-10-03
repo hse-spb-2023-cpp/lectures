@@ -5,6 +5,8 @@ struct ratio {
     int denom = 1;
 
     // Delegating constructor.  Cannot initialize fields ourselves.
+
+    // ratio() { ratio(0);  /* creation of a temporary `ratio`. */ }
     ratio() : ratio(0)/*, num(100)*/ {}
     ratio(int value) : ratio(value, 1) { /* executed after ratio(value, 1) */ }
     ratio(int value, int value_denom) : num(value), denom(value_denom) {}

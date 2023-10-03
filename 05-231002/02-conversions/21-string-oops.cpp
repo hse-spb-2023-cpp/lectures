@@ -16,6 +16,6 @@ int main() {
     {
         using namespace std::literals;
         call_with_foo("hello"s);  // user-defined literal: "hello"s is std::string
-        // [[maybe_unused]] int s;  // 's' is not a reserved name.
+        [[maybe_unused]] int s;  // 's' is not a reserved name.
     }
 }

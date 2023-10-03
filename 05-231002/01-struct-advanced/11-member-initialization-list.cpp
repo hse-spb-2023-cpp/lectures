@@ -7,7 +7,7 @@ struct ratio {
 
     // Better to initialize correctly right away than to reassign.
     ratio() {}
-    ratio(int value) : num(value), unused_vector(1) {}
+    ratio(int value) : num(value), unused_vector{123, 456} {}
     ratio(int value, int value_denom) : num(value), denom(value_denom), unused_vector(2) {}
 };
 

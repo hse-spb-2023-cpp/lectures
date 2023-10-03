@@ -20,5 +20,8 @@ int main() {
     // API design principle: it should be impossible to
     // "break" the class even if you want!
     // Violated:
+
     r.denom = 0;
+    // std::cin >> d.denom;
+    // d.denom = some * complex / expression + very - complex;
 }
