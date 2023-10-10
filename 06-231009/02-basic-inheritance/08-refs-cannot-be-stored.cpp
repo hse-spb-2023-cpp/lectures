@@ -43,13 +43,16 @@ MyStream &operator<<(MyStream &s, Bigint &b) {  // `&` is important, otherwise c
 }
 
 int main() {
-    std::vector<MyStream&> streams; /*= {
-        MyCoutStream{},
-        MyStringStream{}
-    };
+    // streams = [MyCoutStream(), MyStringStream(), MyCoutStream()]
+
+    std::vector<MyStream&> streams;
+    streams.push_back(MyCoutStream{});
+    streams.push_back(MyStringStream{});
+    streams.push_back(MyCoutStream{});
+
     Bigint x{123};
     for (auto &s : streams) {
         s << x;
         s.write("\n");
-    }*/
+    }
 }

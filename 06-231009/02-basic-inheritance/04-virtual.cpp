@@ -41,7 +41,7 @@ struct Bigint {
 };
 
 MyStream &operator<<(MyStream &s, Bigint &b) {  // `&` is important, otherwise creates new `MyStream`.
-    s.write(b.x);  // "Virtual" call.
+    s.write(b.x);  // "Virtual" call, O(1), but slow.
     return s;
 }
 

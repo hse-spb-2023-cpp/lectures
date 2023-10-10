@@ -52,4 +52,5 @@ int main() {
         (*s) << x;
         (*s).write("\n");
     }
+    // TODO: delete, or even `vector<unique_ptr<MyStream>>`
 }

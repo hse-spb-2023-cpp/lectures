@@ -10,7 +10,7 @@ struct MyStream {  // "Abstract" class because of at least one "pure virtual" me
     virtual void write(int) = 0;
 };
 
-struct MyCoutStream : MyStream {  // inheritnace
+struct MyCoutStream : MyStream {  // inheritance
     void write(const std::string &v) override {
         std::cout << v;
     }

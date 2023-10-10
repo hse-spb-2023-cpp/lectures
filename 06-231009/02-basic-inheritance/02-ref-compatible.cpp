@@ -8,7 +8,7 @@
 struct MyStream {
 };
 
-struct MyCoutStream : MyStream {  // inheritnace: `MyStream` is "base" class, `MyCoutStream` is "derived" class.
+struct MyCoutStream : MyStream {  // inheritance: `MyStream` is "base" class, `MyCoutStream` is "derived" class.
     void write(const std::string &v) {
         std::cout << v;
     }
@@ -46,6 +46,6 @@ int main() {
     Bigint x{123};
     s1 << x;  // Binds `MyStream&` to `MyCoutStream`!
     s1.write("!\n");
-    s2 << x;  // Binds `MyStream&` to `MyCoutStream`!
+    s2 << x;  // Binds `MyStream&` to `MyStringStream`!
     std::cout << "|" << s2.s.str() << "|\n";
 }
