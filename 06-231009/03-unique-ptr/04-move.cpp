@@ -16,18 +16,12 @@ std::unique_ptr<Foo> create_foo() {
     return f;  // Can return local variables
 }
 
-auto global_f = std::make_unique<Foo>();
-std::unique_ptr<Foo> create_foo_bad() {
-    return std::move(global_f);  // But why?
-    // return std::make_unique<Foo>(*global_f);  // deep copy
-}
-
 int main() {
     std::vector<std::unique_ptr<Foo>> vec;
     {
         vec.emplace_back(create_foo());  // No std::move needed
 
-        auto f = create_foo();
+        std::unique_ptr<Foo> f = create_foo();
         // vec.emplace_back(f);
 
         std::unique_ptr<Foo> g = std::move(f);
@@ -40,4 +34,10 @@ int main() {
         std::cout << (g == nullptr) << "\n";
     }
     std::cout << vec[0]->v[4] << "\n";
+}
+
+auto global_f = std::make_unique<Foo>();
+std::unique_ptr<Foo> create_foo_bad() {
+    return std::move(global_f);  // But why?
+    // return std::make_unique<Foo>(*global_f);  // deep copy
 }
