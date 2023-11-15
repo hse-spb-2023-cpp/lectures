@@ -6,7 +6,7 @@ struct Foo {
     Foo();
 };
 
-extern Foo f;  // declaraion (not definition!) of global variable
+extern Foo f;
 Foo &get_foo();
 
 #endif  // FOO_HPP_

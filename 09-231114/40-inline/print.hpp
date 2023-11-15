@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-// `inline` means "ignore ODR"
+// `inline` means "ignore ODR", but all definitions should be exactly the same (incl. names)
 inline void print(int value) {
     std::cout << "print(" << value << ")\n";
 }

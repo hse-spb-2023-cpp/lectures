@@ -8,7 +8,7 @@
 
 // "unnamed namespace"
 namespace {
-// internal linkage
+// internal linkage, hides any external function '::foo()'
 void foo() {
     std::cout << "other foo\n";
 }
@@ -20,8 +20,3 @@ void do_other() {
     [[maybe_unused]] static int tmp_static = 456;  // no linkage
     foo();
 }
-
-// special case: consts
-[[maybe_unused]] int global_x;  // external
-[[maybe_unused]] const int TEN = 10;  // internal linkage
-[[maybe_unused]] const std::string HELLO = "hello";  // internal linkage
