@@ -22,6 +22,6 @@ int main() {
     int x, y;
     swap(x, y);
 
-    unmovable a, b;
+    [[maybe_unused]] unmovable a, b;
     swap(a, b);
 }

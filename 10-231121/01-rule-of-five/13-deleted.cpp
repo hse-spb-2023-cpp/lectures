@@ -3,7 +3,9 @@
 struct MoveOnly {
     MoveOnly() {}
 
-    // Alternative: make both `private`.
+    // Alternative: make both `private`,
+    //              no definition (and get "undefined reference" linkage error), or
+    //              run-time assert
     MoveOnly(const MoveOnly &) = delete; /*{
         assert(false);
         std::cout << "copy ctor\n";

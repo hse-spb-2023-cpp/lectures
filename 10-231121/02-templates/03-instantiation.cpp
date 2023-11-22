@@ -41,6 +41,8 @@ int main() {
         x.value = s.begin();
         // x.foo(s);
     }
-    // [[maybe_unused]] templ_foo<int> y;
-    // [[maybe_unused]] templ_foo<templ_foo<std::vector<int>>> z;
+    [[maybe_unused]] templ_foo<int> *y = nullptr;
+    [[maybe_unused]] templ_foo<templ_foo<std::vector<int>>> *z = nullptr;
+    // [[maybe_unused]] templ_foo<int> y1;
+    // [[maybe_unused]] templ_foo<templ_foo<std::vector<int>>> z1;
 }

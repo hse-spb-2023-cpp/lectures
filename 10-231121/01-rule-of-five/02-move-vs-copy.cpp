@@ -27,6 +27,7 @@ void swap(T &a, T &b) {
 // C++11
 void swap(T &a, &b) {
     T tmp = std::move(a);
+    // Moved-from state: some unspecified state.  But you can assign.
     a = std::move(b);
     b = std::move(tmp);
 }

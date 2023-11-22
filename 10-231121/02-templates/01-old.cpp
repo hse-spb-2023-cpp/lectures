@@ -9,11 +9,11 @@ public: \
 };
 
 DECLARE_OPTION(int)
-DECLARE_OPTION(std::string)
+DECLARE_OPTION(std::string)  // struct Optionalstd::string
 
-struct OptionalString {  // `Optionalstd::String`
+struct Optionalint {
 private:
-    std::string value;
+    int value;
     bool exists;
 public:
 
