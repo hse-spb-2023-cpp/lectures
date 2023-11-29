@@ -3,9 +3,10 @@
 int main() {
     const char *s_ptr;
     {
+        // No small string optimization
+//        std::string s = "hello 1234567890654345678986434567898643456789097654";
         // Small string optimization
-//        std::string s = "hello";
-        std::string s = "hello 1234567890654345678986434567898643456789097654";
+        std::string s = "hello";
 
         s_ptr = s.c_str();
         // s_ptr = &s[0];

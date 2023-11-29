@@ -14,7 +14,7 @@ int main() {
     std::cout << sizeof(str) / sizeof(str[0]) << "\n";  // 6
 
     const char *str_ptr = str;  // array-to-pointer decay
-    std::cout << std::strlen(str) << "\n";  // 5
+    std::cout << std::strlen(str_ptr) << "\n";  // 5
     // std::cout << std::size(str_ptr) << "\n";  // does not compile
     {
        int int_value = 5;

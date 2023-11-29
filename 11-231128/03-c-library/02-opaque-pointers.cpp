@@ -7,7 +7,7 @@ int main() {
 
     // Never try to access `FILE`'s fields directly.
     char buf[20];
-    fscanf(f, "%20s", buf);  // "method"
+    fscanf(f, "%19s", buf);  // "method"
     printf("buf=|%s|\n", buf);
 
     fclose(f);  // "destructor"

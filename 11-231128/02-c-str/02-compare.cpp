@@ -16,7 +16,7 @@ int main() {
     {
         const char *a = "hello";
         const char *b = "hello\0";
-        std::cout << (a == b) << "\n";  // Unknown result, not UB.
+        std::cout << (a == b) << "\n";  // Unknown result, not UB, not unspecified.
     }
     {
         const char *a = "hello";

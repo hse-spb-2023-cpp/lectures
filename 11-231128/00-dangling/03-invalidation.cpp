@@ -11,7 +11,9 @@ int main() {
     std::cout << first << " " << *first_it << "\n";
     vec.push_back(4);  // 1 2 4
     std::cout << first << " " << *first_it << "\n";
+    std::cout << vec.capacity() << "\n";
     vec.push_back(5);  // 1 2 4 5; invalidates both all iterators and pointers
+    std::cout << vec.capacity() << "\n";
     std::cout << first << " " << *first_it << "\n";  // UB, UB
     std::cout << vec[0] << "\n";
 }

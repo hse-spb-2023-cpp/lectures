@@ -21,4 +21,6 @@ int main() {
     [[maybe_unused]] int a6[10] = { 0 };  // 0, 0, 0, 0, ...
     [[maybe_unused]] int a7[10] = { 1 };  // 1, 0, 0, 0, ...
     [[maybe_unused]] int a8[] = {1, 2, 3};  // size == 3
+
+    // a8 = {4, 5, 6};
 }

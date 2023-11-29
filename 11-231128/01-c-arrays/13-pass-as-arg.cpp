@@ -3,10 +3,10 @@
 #include <iterator>
 #include <cstddef>
 
-//void foo(int arr[]) {  // Actually void foo(int *arr)
-void foo(int arr[5]) {  // Actually void foo(int *arr)
-//void foo(int arr[15]) {  // Actually void foo(int *arr)
-//void foo(int *arr) {
+// void foo(int arr[]) {  // Actually void foo(int *arr)
+// void foo(int arr[5]) {  // Actually void foo(int *arr)
+// void foo(int arr[15]) {  // Actually void foo(int *arr)
+void foo(int *arr) {
     // Careful: sizeof pointer
     std::cout << "arr[0] = " << arr[0] << ", sizeof = " << sizeof(arr) << "\n";
 }
