@@ -1,3 +1,4 @@
+#include <cassert>
 #include <iostream>
 #include <thread>
 
@@ -15,7 +16,12 @@ int main() {
     };
     std::thread t(worker);
     for (int i = 0; i < M; i++) {
-        if (data % 2 == 0) {  // TODO: read-check problem?
+        if (data % 2 == 0) {  // TOCTOU problem: https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use
+            assert(data % 2 == 0);
+            // Consequence: NEVER read values in multithreaded environment!
+            // E.g. with filesystems it's fragile, but everyone ignores it:
+            // https://www.reddit.com/r/cpp/comments/s8ok0h/comment/hti8jyt/
+            // Rust does not ignore: https://blog.rust-lang.org/2022/01/20/cve-2022-21658.html
             std::cout << "data is " << data << " (in progress)\n";
         }
     }

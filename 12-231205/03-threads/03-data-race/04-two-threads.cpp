@@ -11,6 +11,22 @@ int main() {
     auto worker = [&]() {
         for (int i = 0; i < N; i++) {
             data++;   // load - compute - store
+            /*
+            data   T1      T2
+             0    tmp=0
+             0    tmp=1
+             1
+             1            tmp=1
+             1            tmp=2
+             2
+
+            data   T1      T2
+             0
+             0    tmp=0   tmp=0
+             0    tmp=1   tmp=1
+             1            tmp=1
+             1
+            */
         }
     };
     std::thread t1(worker);

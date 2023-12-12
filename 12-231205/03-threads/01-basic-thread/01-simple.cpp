@@ -9,7 +9,7 @@ int main() {
         std::cout << "Hello from thread! data=" << data << "\n";
         data += 10;
     });
-    // std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    // std::this_thread::sleep_for(std::chrono::milliseconds(5000));
     std::cout << "Waiting for it...\n";
     t.join();  // Подождать поток t, освобождает ресурсы потока.
     std::cout << "data is " << data << "\n";
