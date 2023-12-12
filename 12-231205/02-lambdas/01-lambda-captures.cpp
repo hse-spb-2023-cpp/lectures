@@ -35,6 +35,7 @@ struct Foo {
             assert(member_var == 11); // this->member_var: reference!
             assert(local_var == 30);
             if (false) {
+                assert(arr[0] == 0);  // this->arr, no need to copy `arr`.
                 // assert(local_big[0] == 0);  // Not captured, as unused.
             }
             // operator() is const by default.
@@ -49,6 +50,7 @@ struct Foo {
         std::cout << "sizeof(lambda2) == " << sizeof(lambda2) << "\n";
 
         // 3
+        assert(local_var == 30);
         auto lambda3 = [=]() mutable {  // [this, local_var]
             // operator() is non-const now.
             member_var++;
@@ -99,7 +101,7 @@ struct Foo {
             lvar++;
         }();
         assert(local_var == 32);
-        [&local_var = std::as_const(local_var)]() {
+        [&local_var = std::as_const(local_var)]() mutable {
             assert(local_var == 32);
             // local_var++;  // const int &local_var;
         }();

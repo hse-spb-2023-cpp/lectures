@@ -20,7 +20,7 @@ int main() {
     {
         std::vector<int> v{1, 2, 3, 4};
         Counter c;
-        c = std::for_each(v.begin(), v.end(), c);
+        c = std::for_each(v.begin(), v.end(), std::move(c));
         std::cout << "c.index = " << c.index << "\n";  // Should be 14
     }
 }

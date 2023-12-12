@@ -17,6 +17,7 @@ int main() {
 
     std::vector<int> v{1, 2, 3, 4, 5, 6, 7, 8};
     sort(v.begin(), v.end(), CloserTo{city_position});
+    // https://cppinsights.io
     sort(v.begin(), v.end(), [=](int a, int b) {  // Can also be: [&], [city_position]
         return std::abs(a - city_position) < std::abs(b - city_position);
     });
