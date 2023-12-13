@@ -4,7 +4,7 @@ int main() {
     int val;
     while (std::cin >> val) {}
     /*
-    .... operator>>(int &var) {
+    istream& operator>>(int &var) {
         var = ....
         return std::cin;
     }

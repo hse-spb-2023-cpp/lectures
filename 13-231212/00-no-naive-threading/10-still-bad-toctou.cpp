@@ -6,11 +6,11 @@
 #pragma GCC optimize("-O2")
 
 int main() {
-    std::atomic<bool> finished = false;
+    std::atomic<bool> stop = false;
     std::atomic<int> value = 0;
 
     std::thread t1([&]() {
-        while (!finished) {
+        while (!stop) {
             value++;
         }
     });
@@ -19,7 +19,7 @@ int main() {
         std::cout << "value=" << value << "\n";
     }
     // Order does not matter: incorrect in both cases.
-    finished = true;
+    stop = true;
     value = 1'000'000;
 
     t1.join();

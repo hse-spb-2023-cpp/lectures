@@ -14,6 +14,7 @@ int main() {
             data++;
             std::cout << "data = " << data << ", stop = " << stop << "\n";
         }
+        std::cout << "thread finished data = " << data << ", stop = " << stop << "\n";
     });
 
     while (data < 100) {}  // Hmm: data is always the same => loop is either infinite or never starts.

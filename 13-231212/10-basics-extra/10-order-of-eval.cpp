@@ -16,7 +16,7 @@ int subtract(int x, int y) {
 }
 
 int main() {
-    cout << next_a() << next_a() << endl;  // Может вывести как 12, так и 21.
+    cout << next_a() << next_a() << endl;  // C++03: может вывести как 12, так и 21; C++17: только 12.
     cout << subtract(next_a(), next_a()) << endl;  // Может вывести как 3-4 == -1, так 4-3 == 1.
     cout << subtract(next_a(), next_a()) << ' ' << next_a() << endl;  // Есть шесть вариантов выполнения.
     cout << 1 - 2 - 3 << endl;

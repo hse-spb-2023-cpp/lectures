@@ -7,7 +7,8 @@ int main() {
 
     std::vector<bool> v{false, true, false};
     std::cout << v[0] << v[1] << v[2] << "\n";  // 010
-    v[1] = true;
+    v[1] = true;  // proxy object with overloaded `operator=(bool)`
+    // std::vector<bool>::reference_type
 
     for ([[maybe_unused]] bool x : v) {  // copy as expected
         x = true;
@@ -19,5 +20,6 @@ int main() {
     for (auto x : v) {  // copy?
         x = true;
     }
+    // for (auto &x : v) { x = true; }
     std::cout << v[0] << v[1] << v[2] << "\n";  // 111 ?!
 }

@@ -9,7 +9,7 @@ int main() {
     volatile bool finished = false;
 
     std::thread t([&]() {
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         // Hmm: compiler cannot reorder two writes below. But CPU still can!
         data = 123;
         finished = true;

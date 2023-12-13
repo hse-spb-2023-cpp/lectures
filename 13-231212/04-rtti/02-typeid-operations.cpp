@@ -41,7 +41,8 @@ int main() {
     }
 
     // Impossible (reflection):
-    // * Call methods
     // * Construct
+    // * Call methods
     // * Read/write/enumerate fields
+    // * Sizeof
 }

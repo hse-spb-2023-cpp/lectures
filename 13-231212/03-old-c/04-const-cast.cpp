@@ -1,5 +1,4 @@
-#include <cassert>
-#include <iostream>
+#include <assert.h>
 
 int len(char *s) {
     int l = 0;

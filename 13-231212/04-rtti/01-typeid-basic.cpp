@@ -2,6 +2,7 @@
 #include <iostream>
 #include <memory>
 #include <typeinfo>
+#include <vector>
 
 namespace ns {
 // RTTI (run-time type information) is for polymorphic classes only.
@@ -35,29 +36,31 @@ int main() {
     const std::type_info &info_derived = typeid(Derived);
     const std::type_info &info_int = typeid(int);
 
-    std::cout << (info_base == info_derived) << "\n";
-    std::cout << (info_base == typeid(Base)) << "\n";
-    std::cout << info_base.name() << "\n";
-    std::cout << boost::core::demangle(info_base.name()) << "\n";
-    std::cout << boost::core::demangle(info_derived.name()) << "\n";
-    std::cout << boost::core::demangle(info_int.name()) << "\n";
+    std::cout << (info_base == info_derived) << "\n";  // 0
+    std::cout << (info_base == typeid(Base)) << "\n";  // 1
 
-// TODO start
-    std::cout << typeid(int).name() << "\n";  // 'i' (msys2) pr 'int' (VS)
-    std::cout << info_b.name() << "\n";       // '4Base' or 'struct Base' (VS)
+    std::cout << typeid(int).name() << "\n";  // 'i' (msys2) or 'int' (VS)
+    std::cout << info_base.name() << "\n";  // 'N2ns4BaseE' or 'struct ns::Base' (VS)
     std::cout << typeid(std::vector<int>).name()
               << "\n";  // 'St6vectorIiSaIiEE' or something else in VS
 
+    std::cout << boost::core::demangle(info_int.name()) << "\n";
+    std::cout << boost::core::demangle(info_base.name()) << "\n";
+    std::cout << boost::core::demangle(info_derived.name()) << "\n";
+    std::cout << boost::core::demangle(typeid(std::vector<int>).name()) << "\n";
+
     std::cout << "===== 2a (non-polymorphic) =====\n";
+    Base b;
+    Derived d;
     const std::type_info &info_int_expr =
         typeid(2 + 2 + foo());  // foo() is not called
     std::cout << boost::core::demangle(info_int_expr.name()) << "\n";
-
-    std::cout << "===== 2b (polymorphic) =====\n";
-    Base b;
-    Derived d;
     std::cout << boost::core::demangle(typeid(b).name()) << "\n";
     std::cout << boost::core::demangle(typeid(d).name()) << "\n";
+    std::cout << boost::core::demangle(typeid(static_cast<Base>(bar())).name())
+              << "\n";  // bar() is not called
+
+    std::cout << "===== 2b (polymorphic) =====\n";
     std::cout << boost::core::demangle(typeid(bar()).name())
               << "\n";  // bar() is called
 
