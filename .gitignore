@@ -1,5 +1,3 @@
-*.pdf
-
 CMakeCache.txt
 CMakeFiles/
 Makefile
@@ -40,3 +38,9 @@ cmake_install.cmake
 *.exe
 *.out
 *.app
+
+# Visual C++ intermediate and debug files
+*.ilk
+*.pdb
+
+/github-access-token.txt
