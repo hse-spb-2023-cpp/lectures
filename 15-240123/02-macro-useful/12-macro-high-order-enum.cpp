@@ -1,5 +1,7 @@
 #include <iostream>
 
+// X macros: https://en.wikipedia.org/wiki/X_macro
+
 #define LIST_E(f) f(Option1) f(Option2) f(Option3)
 enum E {
    #define OPTION(e) e,
