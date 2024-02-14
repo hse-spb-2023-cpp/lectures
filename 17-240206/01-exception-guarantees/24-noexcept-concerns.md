@@ -8,7 +8,9 @@ Cons:
 
 1. `noexcept` in function signature: compiler does not force anything, but happily terminates the program
 2. Impossible to do "negative testing" that the function catches errors as expected: https://bloomberg.github.io/bde-resources/doxygen/bde_api_prod/group__bsls__asserttest.html#4.1
-3. `noexcept` is kind of a "wide contract".
+3. `noexcept` is kind of a "wide contract"
+
+See ["The (John) Lakos Rule"](https://quuxplusone.github.io/blog/2018/04/25/the-lakos-rule/).
 
 What we do in this course for training:
 

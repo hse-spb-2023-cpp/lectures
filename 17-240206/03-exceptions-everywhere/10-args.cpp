@@ -18,7 +18,7 @@ struct Foo {
     }
 };
 
-void func(Foo, Foo, Foo) {
+void func(Foo, Foo, Foo) /* noexcept */ {
     std::cout << "func\n";
 }
 
