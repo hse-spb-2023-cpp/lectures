@@ -13,7 +13,7 @@ int main() {
     p.last_name = "Ivanov";
 
     {
-        std::ofstream f("02.bin", std::ios::binary);
+        std::ofstream f("03.bin", std::ios::binary);
         f.write(reinterpret_cast<const char*>(&p), sizeof p);
     }
 }

@@ -9,11 +9,12 @@ struct Person {
 
 int main() {
     Person p;
-    p.first_name = "Ivan1234123412341234123412341234123412341234123412341234xxx";
+    std::cout << sizeof(std::string) << "\n";
+    p.first_name = "Ivan";//1234123412341234123412341234123412341234123412341234xxx";
     p.last_name = "Ivanov";
 
     {
-        std::ofstream f("03.bin", std::ios::binary);
+        std::ofstream f("04.bin", std::ios::binary);
         f.write(reinterpret_cast<const char*>(&p), sizeof p);  // Not UB, but UB on read.
         // std::string is not trivially copyable.
     }
