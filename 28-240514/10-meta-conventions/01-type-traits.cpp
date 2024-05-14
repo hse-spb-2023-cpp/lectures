@@ -19,6 +19,8 @@ template<typename T>
 struct iterator_traits<T*> {  // Corner case, can be specialized
     using value_type = T;
     using difference_type = std::ptrdiff_t;
+
+    static constexpr int modern_magic = 2;
 };
 
 template<typename It>
@@ -26,6 +28,7 @@ void foo(It begin, It end) {
     [[maybe_unused]] typename iterator_traits<It>::difference_type n = end - begin;
     [[maybe_unused]] typename iterator_traits<It>::value_type first = *begin;
     // Since C++11: `auto` is very helpful
+    auto second = *(begin + 1);
 }
 
 template<typename It>

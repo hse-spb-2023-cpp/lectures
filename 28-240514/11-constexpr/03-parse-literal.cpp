@@ -21,7 +21,7 @@ constexpr auto parse_format(const char (&s)[N]) {
 static_assert(parse_format("hello%d=%s").first == 2);
 static_assert(parse_format("hello%d=%s").second[0] == 'd');
 static_assert(parse_format("hello%d=%s").second[1] == 's');
-// static_assert(parse_format("hello%d=%").second[1] == 's');
+static_assert(parse_format("hello%d=%").second[1] == 's');
 
 // !! NOT FOR EXAM DOWN BELOW !!
 

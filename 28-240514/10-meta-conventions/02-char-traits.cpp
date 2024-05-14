@@ -11,7 +11,7 @@ struct CaseInsensitiveChar { char c; }
 
 template<>
 struct char_traits<CaseInsensitiveChar> {
-    static bool eq(T a, T b) {
+    static bool eq(CaseInsensitiveChar a, CaseInsensitiveChar b) {
         return tolower(a.c) == tolower(b.c);
     }
 };

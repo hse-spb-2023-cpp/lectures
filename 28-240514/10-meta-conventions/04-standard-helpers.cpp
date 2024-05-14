@@ -32,6 +32,7 @@ static_assert(std::is_default_constructible_v<std::vector<int>>);
 static_assert(std::is_constructible_v<std::vector<int>, int>);
 static_assert(std::is_constructible_v<std::vector<int>, int, int>);
 static_assert(!std::is_constructible_v<std::vector<int>, int, int, int>);
+// vector<int>{1, 2, 3}
 
 static_assert(std::is_nothrow_constructible_v<std::vector<int>>);
 static_assert(!std::is_nothrow_constructible_v<std::vector<int>, int>);

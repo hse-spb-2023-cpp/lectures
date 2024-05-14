@@ -25,17 +25,20 @@ constexpr int Y1 = sum(2, 2);  // on a variable: forces compile-time const
 int arr1[N];
 // int arr2[X];
 int arr3[Y];
-//int arr4[sum_non_constexpr(2, 2)];
+int arr4[Y1];
+// int arr5[sum_non_constexpr(2, 2)];
 
 template<int> struct Foo {};
 Foo<N> foo1;
 // Foo<X> foo2;
 Foo<Y> foo3;
-//Foo<sum_non_constexpr(2, 2)> foo4;
+Foo<Y1> foo4;
+// Foo<sum_non_constexpr(2, 2)> foo5;
 
 static_assert(N == 10);
 // static_assert(X == 123);
 static_assert(Y == 4);
+static_assert(Y1 == 4);
 static_assert(sum(3, 4) == 7);
 
 int main() {
